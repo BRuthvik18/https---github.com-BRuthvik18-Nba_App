@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{ team.name + " [" + team.abbr + "] " }}</mat-card-title>
+        <mat-card-subtitle>{{ team.conf + "ern Conference" }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p *ngFor="let data of matchStats">
+            <b>{{
+          data.match.home_team.abbreviation + " " + data.match.home_team_score
+        }} </b
+      >-<b>{{
+        data.match.visitor_team.abbreviation +
+          " " +
+          data.match.visitor_team_score
+      }}</b>
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-stroked-button color="accent" (click)="back()">
+      << Back to all team stats
+    </button>
+    </mat-card-actions>
+</mat-card>

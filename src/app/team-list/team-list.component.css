@@ -1,0 +1,13 @@
+.card-div {
+    background-color: rgb(18, 195, 195);
+    border-radius: 5px solid black;
+}
+
+.card {
+    display: flex;
+    width: 30%;
+    float: left;
+    margin-left: 2%;
+    align-items: center;
+    height: 1%;
+}

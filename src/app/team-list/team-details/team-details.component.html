@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <button type="button" class="btn-close" aria-label="close" (click)="deleteTeam(teamDetails.id)"></button>
+        <mat-card-title>
+            {{ teamDetails.full_name + "[" + teamDetails.abbreviation + "]" }}
+        </mat-card-title>
+        <mat-card-subtitle>{{ teamDetails.conference + "ern Conference" }}
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="imageUrl()" alt="teamDetails.full_name" />
+
+    <mat-card-content>
+        <p>The Result Of 12 Days:</p>
+        <div class="mainStats">
+            <div *ngFor="let stats of matchStats" class="stats">
+                <div class="green" *ngIf="stats.stats == 'win'">W</div>
+                <div class="red" *ngIf="stats.stats == 'lost'">L</div>
+            </div>
+        </div>
+        <p>Avg Points Scored:{{ avgPointFinal }}</p>
+        <p>Avg Points Conceded:{{ avgFinalConcededPoints }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-stroked-button color="accent" (click)="gameResults()">
+      See Game Results>
+    </button>
+    </mat-card-actions>
+    <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+</mat-card>
