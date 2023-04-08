@@ -37,7 +37,7 @@ export class MatchStatsComponent implements OnInit {
           this.matchStats[j].match.home_team.full_name
         ) {
           this.countA = this.countA + 1;
-          console.log(this.matchStats[i].match.home_team.full_name);
+
           this.tempA.name = this.matchStats[i].match.home_team.full_name;
           this.tempA.abbr = this.matchStats[i].match.home_team.abbreviation;
           this.tempA.conf = this.matchStats[i].match.home_team.conference;

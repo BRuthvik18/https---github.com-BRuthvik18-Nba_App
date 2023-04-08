@@ -45,24 +45,16 @@ export class TeamDetailsComponent implements OnInit {
   }
 
   filteredGames() {
-    console.log(this.teamDetails.id);
     if (this.teamDetails.id != null && this.stats.length > 0) {
-      console.log(this.teamDetails.id);
-
       for (let i = 0; i < this.stats.length; i++) {
-        console.log(this.stats[i].visitor_team.id);
         if (this.teamDetails.id == this.stats[i].visitor_team.id) {
           this.filterGame.push(this.stats[i]);
-          console.log(this.stats[i]);
         }
         if (this.teamDetails.id == this.stats[i].home_team.id) {
-          console.log(this.stats[i]);
           this.filterGame.push(this.stats[i]);
-          console.log(this.filterGame);
         }
       }
     }
-    console.log(this.filterGame);
   }
 
   winStatsFunc() {
@@ -125,6 +117,6 @@ export class TeamDetailsComponent implements OnInit {
 
   gameResults() {
     this.service.gameResults(this.matchStats);
-    this.router.navigate(['/match-stats']);
+    this.router.navigate(['/results/' + this.teamDetails.abbreviation]);
   }
 }

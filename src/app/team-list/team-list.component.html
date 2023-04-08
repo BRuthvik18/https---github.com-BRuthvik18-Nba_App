@@ -1,15 +1,15 @@
 <mat-form-field appearance="fill">
     <mat-label>Select Team Name</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="teamName">
+    <mat-select id="teamSelect" [(ngModel)]="selectedValue" name="teamName">
         <mat-option *ngFor="let team of teams" [value]="team">
             {{ team.full_name }}
         </mat-option>
     </mat-select>
 </mat-form-field>
 &nbsp;
-<button type="button" class="btn btn-outline-primary" (click)="onSelectTeam()">
-    Track Team
-  </button>
+<button id="trackBtn" type="button" class="btn btn-outline-primary" (click)="onSelectTeam()">
+  Track Team
+</button>
 
 <div class="card-div">
     <app-team-details class="card" *ngFor="let data of teamDetails" [details]="data" (delete)="deleteElement($event)"></app-team-details>

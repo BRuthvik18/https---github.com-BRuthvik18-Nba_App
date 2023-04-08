@@ -14,7 +14,11 @@ const routes: Routes = [
     component: TeamListComponent,
     pathMatch: 'full',
   },
-  { path: 'match-stats', component: MatchStatsComponent, pathMatch: 'full' },
+  {
+    path: 'results/:teamCode',
+    component: MatchStatsComponent,
+    pathMatch: 'full',
+  },
   {
     path: '**',
     redirectTo: 'teams',

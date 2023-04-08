@@ -23,7 +23,7 @@ export class TeamListComponent implements OnInit {
     this.TeamsService.getAllTeamData().subscribe(
       (data: TeamData[]) => {
         this.teams = data;
-        console.log(data);
+
         if (this.teamDetails.length == 0) {
           this.teamDetails = this.service.teams;
         }
@@ -46,14 +46,12 @@ export class TeamListComponent implements OnInit {
   }
 
   onSelectTeam() {
-    console.log(this.selectedValue);
     this.filterValue(this.selectedValue.id);
     if (this.flag) {
       this.teamDetails.push(this.selectedValue);
       this.flag = true;
       this.service.teams = this.teamDetails;
     }
-    console.log(this.teamDetails);
   }
 
   deleteElement(id: number) {
